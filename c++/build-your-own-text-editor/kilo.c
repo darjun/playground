@@ -196,7 +196,7 @@ int editorRowCxToRx(erow *row, int cx) {
     return rx;
 }
 
-void editorRowRxToCx(erow *row, int rx) {
+int editorRowRxToCx(erow *row, int rx) {
     int cur_rx = 0;
     int cx;
     for (cx = 0; cx < row->size; cx++) {
@@ -415,7 +415,7 @@ void editorFind() {
         char *match = strstr(row->render, query);
         if (match) {
             E.cy = i;
-            E.cx = match - row->render;
+            E.cx = editorRowRxToCx(row, match - row->render);
             E.rowoff = E.numrows;
             break;
         }
