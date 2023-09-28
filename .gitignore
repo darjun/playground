@@ -1,2 +1,6 @@
 .vscode/
 kilo
+*.o
+27.2
+standalone
+stack-dump
