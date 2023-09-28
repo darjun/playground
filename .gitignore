@@ -1,6 +1,7 @@
 .vscode/
 kilo
 *.o
+*.so
 27.2
 standalone
 stack-dump
