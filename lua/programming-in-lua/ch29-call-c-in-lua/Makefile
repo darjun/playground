@@ -8,10 +8,10 @@ mylib.o: mylib.c
 	$(CC) $(CFLAGS) mylib.c -o mylib.o
 
 mylib.so: mylib.o
-	$(CC) mylib.o -shared -o mylib.so
+	$(CC) mylib.o -shared -o mylib.so  $(LDFLAGS)
 
 ex.o: ex/ex.c
 	$(CC) $(CFLAGS) ex/ex.c -o ex.o
 
 ex.so: ex.o
-	$(CC) ex.o -shared -o ex.so
+	$(CC) ex.o -shared -o ex.so $(LDFLAGS)
