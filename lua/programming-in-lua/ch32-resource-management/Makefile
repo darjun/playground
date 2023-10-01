@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-I/usr/local/include -c -fPIC
 LDFLAGS=-L/usr/local/lib -llua -lm -ldl
 
-all: dir.so lxp
+all: dir.so lxp.sp
 
 dir.o: dir.c
 	$(CC) $(CFLAGS) dir.c -o dir.o
