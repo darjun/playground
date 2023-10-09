@@ -5,3 +5,5 @@ kilo
 27.2
 standalone
 stack-dump
+*.out
+*.luac
