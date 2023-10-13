@@ -63,9 +63,9 @@ const (
 
 const (
 	OpArgN = iota // argument is not used
-	OpArgU // argument is used
-	OpArgR // argument is a register or a jump offset
-	OpArgK // argument is a constant or register/constant
+	OpArgU        // argument is used
+	OpArgR        // argument is a register or a jump offset
+	OpArgK        // argument is a constant or register/constant
 )
 
 type opcode struct {
@@ -73,12 +73,12 @@ type opcode struct {
 	setAFlag byte // instruction set register A
 	argBMode byte // B arg mode
 	argCMode byte // C arg mode
-	opMode byte // op mode
-	name string
-	action func(i Instruction, vm api.LuaVM)
+	opMode   byte // op mode
+	name     string
+	action   func(i Instruction, vm api.LuaVM)
 }
 
-var opcodes = []opcode {
+var opcodes = []opcode{
 	/*     T  A    B       C     mode   name   action*/
 	opcode{0, 1, OpArgR, OpArgN, IABC, "MOVE", move},
 	opcode{0, 1, OpArgK, OpArgN, IABx, "LOADK", loadK},
@@ -88,8 +88,8 @@ var opcodes = []opcode {
 	opcode{0, 1, OpArgU, OpArgN, IABC, "GETUPVAL", nil},
 	opcode{0, 1, OpArgU, OpArgK, IABC, "GETTABUP", nil},
 	opcode{0, 1, OpArgR, OpArgK, IABC, "GETTABLE", nil},
-	opcode{0, 0, OpArgK, OpArgK, IABC, "SETTABLE", nil},
-	opcode{0, 0, OpArgU, OpArgN, IABC, "SETTABUP", nil},
+	opcode{0, 0, OpArgK, OpArgK, IABC, "SETTABUP", nil},
+	opcode{0, 0, OpArgU, OpArgN, IABC, "SETUPVAL", nil},
 	opcode{0, 0, OpArgK, OpArgK, IABC, "SETTABLE", nil},
 	opcode{0, 1, OpArgU, OpArgU, IABC, "NEWTABLE", nil},
 	opcode{0, 1, OpArgR, OpArgK, IABC, "SELF", nil},
