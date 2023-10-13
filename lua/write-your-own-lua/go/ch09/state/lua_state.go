@@ -1,7 +1,7 @@
 package state
 
-const (
-	LUA_MINSTACK = 20
+import (
+	. "github.com/darjun/luago/ch09/api"
 )
 
 type luaState struct {
