@@ -12,7 +12,7 @@ func print(ls LuaState) int {
 	nArgs := ls.GetTop()
 	for i := 1; i <= nArgs; i++ {
 		if ls.IsBoolean(i) {
-			fmt.Print("%t", ls.ToBoolean(i))
+			fmt.Printf("%t", ls.ToBoolean(i))
 		} else if ls.IsString(i) {
 			fmt.Print(ls.ToString(i))
 		} else {
