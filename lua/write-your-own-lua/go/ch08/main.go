@@ -1,15 +1,14 @@
 package main
 
 import (
-	"io/ioutil"
 	"os"
 
 	"github.com/darjun/luago/ch08/state"
 )
 
 func main() {
-	if len(os.Args) > 1{
-		data, err := ioutil.ReadFile(os.Args[1])
+	if len(os.Args) > 1 {
+		data, err := os.ReadFile(os.Args[1])
 		if err != nil {
 			panic(err)
 		}

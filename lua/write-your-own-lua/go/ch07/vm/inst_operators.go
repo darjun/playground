@@ -145,7 +145,7 @@ func testSet(i Instruction, vm LuaVM) {
 func test(i Instruction, vm LuaVM) {
 	a, _, c := i.ABC()
 	a += 1
-	if vm.ToBoolean(a) == (c != 0) {
+	if vm.ToBoolean(a) != (c != 0) {
 		vm.AddPC(1)
 	}
 }
