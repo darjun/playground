@@ -25,7 +25,7 @@ func (self *luaState) PushString(s string) {
 }
 
 func (self *luaState) PushGoFunction(f GoFunction) {
-	self.stack.push(f)
+	self.stack.push(&closure{goFunc: f})
 }
 
 func (self *luaState) PushGlobalTable() {
