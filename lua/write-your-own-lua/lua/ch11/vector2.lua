@@ -39,7 +39,7 @@ mt.__index = function (v, k)
 end
 
 mt.__call = function(v)
-    print("[", v.x .. ", " .. v.y .. "]")
+    print("[" .. v.x .. ", " .. v.y .. "]")
 end
 
 v1 = vector(1, 2)

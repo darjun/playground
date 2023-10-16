@@ -30,8 +30,8 @@ func (self *luaState) getTable(t, k luaValue, raw bool) LuaType {
 		v := tbl.get(k)
 		if raw || v != nil || !tbl.hasMetafield("__index") {
 			self.stack.push(v)
+			return typeOf(v)
 		}
-		return typeOf(v)
 	}
 
 	if !raw {
