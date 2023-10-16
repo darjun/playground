@@ -65,6 +65,7 @@ func (self *luaState) Arith(op ArithOp) {
 	operator := operators[op]
 	if result := arith(a, b, operator); result != nil {
 		self.stack.push(result)
+		return
 	}
 
 	mm := operator.metamethod

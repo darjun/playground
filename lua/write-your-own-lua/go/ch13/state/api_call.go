@@ -105,6 +105,7 @@ func (self *luaState) PCall(nArgs, nResults, msgh int) (status int) {
 			for self.stack != caller {
 				self.popLuaStack()
 			}
+			self.stack.push(err)
 		}
 	}()
 

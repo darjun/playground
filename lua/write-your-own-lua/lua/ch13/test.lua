@@ -15,5 +15,5 @@ print(ok, result)
 ok, err = pcall(div2, 5, 0)
 print(ok, err)
 
-ok, err = call(div2, {}, {})
+ok, err = pcall(div2, {}, {})
 print(ok, err)
