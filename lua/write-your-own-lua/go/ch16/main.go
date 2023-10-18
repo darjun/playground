@@ -18,12 +18,10 @@ func main() {
 }
 
 func testParser(chunk, chunkName string) {
-	for {
-		ast := parser.Parse(chunk, chunkName)
-		b, err := json.Marshal(ast)
-		if err != nil {
-			panic(err)
-		}
-		println(string(b))
+	ast := parser.Parse(chunk, chunkName)
+	b, err := json.Marshal(ast)
+	if err != nil {
+		panic(err)
 	}
+	println(string(b))
 }

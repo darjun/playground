@@ -49,9 +49,10 @@ func parseExp10(lexer *Lexer) Exp {
 			TOKEN_OP_LE, TOKEN_OP_GE, TOKEN_OP_EQ:
 			line, op, _ := lexer.NextToken()
 			exp = &BinopExp{line, op, exp, parseExp10(lexer)}
+		default:
+			return exp
 		}
 	}
-	return exp
 }
 
 // x | y
@@ -79,7 +80,7 @@ func parseExp7(lexer *Lexer) Exp {
 	exp := parseExp6(lexer)
 	for lexer.LookAhead() == TOKEN_OP_BAND {
 		line, op, _ := lexer.NextToken()
-		exp = BinopExp{line, op, exp, parseExp6(lexer)}
+		exp = &BinopExp{line, op, exp, parseExp6(lexer)}
 	}
 	return exp
 }
@@ -96,7 +97,6 @@ func parseExp6(lexer *Lexer) Exp {
 			return exp
 		}
 	}
-	return exp
 }
 
 // a .. b
@@ -127,7 +127,6 @@ func parseExp4(lexer *Lexer) Exp {
 			return exp
 		}
 	}
-	return exp
 }
 
 // *,%,/,//
@@ -142,7 +141,6 @@ func parseExp3(lexer *Lexer) Exp {
 			return exp
 		}
 	}
-	return exp
 }
 
 // unary
