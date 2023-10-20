@@ -8,3 +8,5 @@ standalone
 stack-dump
 *.out
 *.luac
+main
+target/
