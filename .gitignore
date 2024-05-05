@@ -1,4 +1,6 @@
 .idea/
+*.iml
+.DS_Store
 .vscode/
 kilo
 *.o
@@ -10,3 +12,4 @@ stack-dump
 *.luac
 main
 target/
+out/
